@@ -1,23 +1,18 @@
 <?php
-// db_connect.php
+// Database configuration for Docker
+$host = getenv('DB_HOST') ?: 'localhost';
+$database = getenv('DB_DATABASE') ?: 'quiz_quest';
+$username = getenv('DB_USERNAME') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: '';
 
-// Database configuration
-define('DB_SERVER', 'localhost'); // Default for XAMPP
-define('DB_USERNAME', 'root');    // Default for XAMPP
-define('DB_PASSWORD', '');        // Default for XAMPP (blank)
-define('DB_NAME', 'quiz_quest');     // Database name
-
-// Attempt to connect to MySQL database
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// Create connection
+$conn = new mysqli($host, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
-    // Stop execution and display a connection error
-    die("ERROR: Could not connect to the database. " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Optional: Set character set for proper data handling
+// Optional: Set charset
 $conn->set_charset("utf8mb4");
-
-// Note: We don't close the connection here; it will be used by the calling script.
 ?>
