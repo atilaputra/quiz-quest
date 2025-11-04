@@ -1,22 +1,31 @@
 version: '3.8'
+
 services:
   web:
     build: .
     ports:
-      - "3000:3000"
+      - "80:80"
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/mydb
+      - DB_HOST=db
+      - DB_DATABASE=quiz_quest
+      - DB_USERNAME=quizuser
+      - DB_PASSWORD=quizpass123
     depends_on:
       - db
-  
-  db:
-    image: postgres:15-alpine
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=mydb
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - .:/var/www/html
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass123
+      - MYSQL_DATABASE=quiz_quest
+      - MYSQL_USER=quizuser
+      - MYSQL_PASSWORD=quizpass123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
 
 volumes:
   db-data:
