@@ -25,5 +25,3 @@ if (!$conn->real_connect($host, $username, $password, $database, 3306, NULL, MYS
 
 // Set charset
 $conn->set_charset("utf8mb4");
-
-```
