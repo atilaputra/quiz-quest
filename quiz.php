@@ -93,6 +93,7 @@ $quiz_duration_minutes = 5; // User will have 5 minutes to complete the quiz
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="container" style="max-width: 800px;">
         
         <div class="quiz-header">
