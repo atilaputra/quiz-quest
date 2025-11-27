@@ -60,6 +60,7 @@ $subjects = [
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="container">
         <h2>Welcome, <?php echo htmlspecialchars($username); ?>!</h2>
         <p>Choose a subject to begin your quiz:</p>
