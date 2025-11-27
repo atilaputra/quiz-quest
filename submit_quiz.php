@@ -109,5 +109,7 @@ $conn->close();
         <a href="logout.php" class="button" style="background-color: #6c757d; color: white;">Logout</a>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particles-config.js"></script>
 </body>
 </html>
