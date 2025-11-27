@@ -3,6 +3,7 @@ QUIZ QUEST – AZURE DEPLOYMENT PROJECT
 Quiz Quest is a simple quiz website built to explore and practice real-world cloud deployment workflows.
 While the quiz itself is straightforward, the main focus of this project is on deploying a 2-tier web application using Azure App Service, Docker, and GitHub Actions.
 
+
 🚀 Project Goals
 
 🔹Learn and apply cloud deployment practices using Microsoft Azure
@@ -18,6 +19,7 @@ While the quiz itself is straightforward, the main focus of this project is on d
 🔹Understand end-to-end workflow: local development → Docker → Azure
 
 
+
 🏗️ Architecture Overview
 
  User
@@ -30,6 +32,7 @@ While the quiz itself is straightforward, the main focus of this project is on d
    
  MySQL Database (Azure / External)
  
+
 
 🧰 Tech Stack
 
@@ -44,6 +47,7 @@ While the quiz itself is straightforward, the main focus of this project is on d
 🔹Deployment: Azure App Service
 
 🔹Automation: GitHub Actions
+
 
 
 ⚙️ Key Features
@@ -61,6 +65,7 @@ While the quiz itself is straightforward, the main focus of this project is on d
 🔹Automated build + deployment pipeline
 
 
+
 📦 Deployment Process
 
 🔹Build Docker image
@@ -74,6 +79,7 @@ While the quiz itself is straightforward, the main focus of this project is on d
 🔹CI/CD pipeline automates build + deployment on new commits
 
 🔹A full walkthrough of the deployment process is included in commit history & workflows.
+
 
 
 📝 Notes
