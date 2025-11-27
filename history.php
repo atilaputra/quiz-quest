@@ -62,6 +62,7 @@ $conn->close();
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="container" style="max-width: 900px;">
         <h2>📝 Your Quiz History</h2>
         <p>Viewing results for <?php echo htmlspecialchars($username); ?>.</p>
