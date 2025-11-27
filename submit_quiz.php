@@ -91,6 +91,7 @@ $conn->close();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="container">
         <h2>🎉 Quiz Completed!</h2>
         <h1 style="color: #007bff;"><?php echo htmlspecialchars($subject); ?> Results</h1>
