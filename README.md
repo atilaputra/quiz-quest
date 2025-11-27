@@ -4,7 +4,9 @@ Quiz Quest is a simple quiz website built to explore and practice real-world clo
 While the quiz itself is straightforward, the main focus of this project is on deploying a 2-tier web application using Azure App Service, Docker, and GitHub Actions.
 
 🚀 Project Goals
+
 🔹Learn and apply cloud deployment practices using Microsoft Azure
+
 🔹Deploy a 2-tier architecture (Frontend + MySQL Database)
 🔹Containerize the application using Docker
 🔹Implement CI/CD automation with GitHub Actions
