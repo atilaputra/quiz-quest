@@ -114,28 +114,83 @@ $conn->close();
             <a href="quiz_dashboard.php" class="button primary">Back to Dashboard</a>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {
-          "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#ffffff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": false },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-            "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": { "enable": true, "mode": "repulse" },
-              "onclick": { "enable": true, "mode": "push" },
-              "resize": true
-            }
-          },
-          "retina_detect": true
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+    /* 1. Define your Palette Colors */
+    const colors = {
+        pink: "%23F3C8DD",      // Queen Pink
+        purple: "%23D183A9",    // Middle Purple
+        lavender: "%2371557A",  // Old Lavender
+        chocolate: "%234B1535"  // Brown Chocolate
+    };
+
+    /* 2. Create the Thicker SVGs */
+    /* Note: stroke-width='6' makes them thick. We replace COLOR_HERE with specific hex codes. */
+    const svgXBase = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='COLOR_HERE' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E";
+    const svgOBase = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='COLOR_HERE' stroke-width='6'%3E%3Ccircle cx='12' cy='12' r='9'%3E%3C/circle%3E%3C/svg%3E";
+
+    /* 3. Generate an image for every color */
+    const coloredImages = [];
+    for (const key in colors) {
+        coloredImages.push({ src: svgXBase.replace('COLOR_HERE', colors[key]), width: 100, height: 100 });
+        coloredImages.push({ src: svgOBase.replace('COLOR_HERE', colors[key]), width: 100, height: 100 });
+    }
+
+    tsParticles.load("particles-js", {
+      background: {
+        color: "#3A345B" /* Background: Jacarta */
+      },
+      particles: {
+        number: {
+          value: 30, 
+          density: { enable: true, area: 800 }
+        },
+        shape: {
+          type: "image",
+          image: coloredImages /* Use the mixed colors */
+        },
+        opacity: {
+          value: { min: 0.3, max: 0.7 }, 
+          animation: { enable: true, speed: 1, sync: false }
+        },
+        size: {
+          value: { min: 20, max: 50 }, /* Slightly larger to match the thickness */
+          animation: {
+            enable: true, 
+            speed: 3,
+            mode: "auto",
+            sync: false
+          }
+        },
+        rotate: {
+          value: { min: 0, max: 360 },
+          animation: {
+            enable: true,
+            speed: 4, /* Gentle rotation */
+            sync: false
+          }
+        },
+        move: {
+          enable: true,
+          speed: 2, /* Gentle floating */
+          direction: "none",
+          random: true,
+          straight: false,
+          outModes: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true
+        },
+        modes: {
+           repulse: { distance: 100, duration: 0.4 }
+        }
+      },
+      detectRetina: true
+    });
+</script>
 </body>
 </html>
